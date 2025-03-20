@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bioforce - Démonstration Chatbot</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+        
+        :root {
+            --bioforce-orange: #E84424;
+            --bioforce-gray: #333331;
+            --bioforce-light-gray: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        body {
+            background-color: white;
+            color: var(--bioforce-gray);
+        }
+        
+        header {
+            background-color: var(--bioforce-orange);
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            background-color: white;
+            border-radius: 15px;
+            padding: 10px;
+            margin-right: 15px;
+        }
+        
+        .tagline {
+            font-size: 1.2em;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: var(--bioforce-orange);
+            font-weight: 700;
+        }
+        
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .chatbot-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+            background-color: var(--bioforce-light-gray);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .chatbot-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .chatbot-frame {
+            width: 100%;
+            max-width: 800px;
+            height: 600px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .values {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 60px 0;
+        }
+        
+        .value-item {
+            flex-basis: 30%;
+            min-width: 250px;
+            text-align: center;
+            margin: 15px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .value-item h3 {
+            color: var(--bioforce-orange);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        footer {
+            background-color: var(--bioforce-gray);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .bioforce-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .bioforce-icon span {
+            color: var(--bioforce-orange);
+            font-weight: bold;
+            font-size: 24px;
+        }
+        
+        @media (max-width: 768px) {
+            .values {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .value-item {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+                <svg width="60" height="60" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M150,50 Q200,50 200,100 Q200,150 150,150 Q100,150 100,100 Q100,50 150,50 Z" fill="#E84424"/>
+                    <path d="M50,50 Q100,50 100,100 Q100,150 50,150 Q0,150 0,100 Q0,50 50,50 Z" fill="#E84424"/>
+                </svg>
+            </div>
+            <h2>bioforce</h2>
+        </div>
+        <div class="tagline">EMPOWERING HUMANITARIANS</div>
+    </header>
+    
+    <main>
+        <section class="intro">
+            <h1>Démonstration de notre Chatbot Humanitaire</h1>
+            <p>Bienvenue sur la page de démonstration de notre assistant virtuel conçu pour aider les acteurs humanitaires. Ce chatbot est un outil innovant pour soutenir nos missions d'accompagnement et de formation des professionnels de l'humanitaire.</p>
+        </section>
+        
+        <section class="chatbot-container">
+            <div class="chatbot-header">
+                <h2>Interagissez avec notre assistant virtuel</h2>
+                <p>Posez vos questions sur nos formations, nos missions ou les métiers de l'humanitaire.</p>
+            </div>
+            <div class="chatbot-frame">
+                <flowise-fullchatbot></flowise-fullchatbot>
+            </div>
+        </section>
+        
+        <script type="module">
+            import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+            Chatbot.initFull({
+                chatflowid: "5ba7c56a-937d-4e22-8ae1-9e3dd6c265e9",
+                apiHost: "https://flowise-1-imiz.onrender.com",
+            })
+        </script>
+        
+        <section class="values">
+            <div class="value-item">
+                <h3>LEARN</h3>
+                <p>Former les acteurs humanitaires d'aujourd'hui et de demain à travers des programmes adaptés et professionnalisants.</p>
+            </div>
+            <div class="value-item">
+                <h3>BUILD</h3>
+                <p>Renforcer les capacités des organisations en zone de crise pour une aide efficace et de qualité.</p>
+            </div>
+            <div class="value-item">
+                <h3>SHARE</h3>
+                <p>Participer à l'évolution et à la structuration du secteur humanitaire à l'échelle internationale.</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="bioforce-icon">
+                <span>B</span>
+            </div>
+            <div class="footer-links">
+                <a href="#">À propos</a>
+                <a href="#">Nos formations</a>
+                <a href="#">Nos missions</a>
+                <a href="#">Contact</a>
+            </div>
+            <p>&copy; 2025 Bioforce - Empowering Humanitarians | <a href="https://bioforce.fr" style="color: white;">bioforce.fr</a></p>
+        </div>
+    </footer>
+</body>
+</html>
